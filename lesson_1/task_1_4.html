@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Самостоятельно разобраться с атрибутами тега script (async и defer). -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Скрипт task_1_4.js, помещенный в тег script без атрибутов async и defer, работает в начале загрузки страницы task_1_4.html. 
+        Загрузка страницы не завершится до тех пор пока не завершит работу этот скрипт.-->
+    <script src="task_1_4.js"></script>
+    <!-- Скрипт task_1_4_defer.js, помещенный в тег script с атрибутом defer, работает после загрузки всего содержимого страницы task_1_4.html.-->
+    <script defer src="task_1_4_defer.js"></script>
+    <!-- Скрипт task_1_4_2_defer.js, помещенный в тег script с атрибутом defer после скрпита task_1_4_defer.js,
+        работает после загрузки всего содержимого страницы task_1_4.html и только после выполнения скрипта task_1_4_defer.js.-->
+    <script defer src="task_1_4_2_defer.js"></script>
+    <!-- Скрипт task_1_4_async.js, помещенный в тег script с атрибутом async, работает параллельно загрузке содержимого страницы task_1_4.html
+        не препятствуя процессу загрузки страницы. Порядок выполнения скриптов, помещенных в теги script с атрибутом async не зависит от их позиции
+    в html-коде относительно других скриптов в тегах script с атрибутами async и defer.-->
+    <script async src="task_1_4_async.js"></script>
+    <!-- Атрибуты async и defer тега script работают только для скриптов, подключаемых из файлов.-->
+</head>
+
+<body>
+    <img src="photo.png" alt="photo">
+</body>
+
+</html>
