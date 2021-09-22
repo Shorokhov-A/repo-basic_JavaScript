@@ -1,0 +1,41 @@
+table {
+	border: 5px solid black;
+	background-color: #EEB771;
+}
+
+table td {
+	font-size: 80px;
+}
+
+tr:first-child td,
+tr:last-child td {
+	color: black;
+	height: 30px;
+	text-align: center;
+	font-size: 30px !important;
+	text-transform: uppercase;
+	background-color:#A95D21 !important;
+}
+
+tr:first-child td {
+	transform: rotate3d(0, 0, 1, 180deg);
+}
+
+td {
+	width: 105px;
+	height: 95px;
+	text-align: center;
+	font-family: serif;
+}
+
+td:first-child,
+td:last-child {
+	background-color: #A95D21 !important;
+	width: 30px;
+	color: black;
+	font-size: 30px;
+}
+
+td:last-child {
+	transform: rotate3d(0, 0, 1, 180deg);
+}

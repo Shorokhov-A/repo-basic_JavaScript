@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Заполнить созданную таблицу буквами, отвечающими за шахматную фигуру, например К – король, Ф – ферзь и т.п.,
+причем все фигуры должны стоять на своих местах и быть соответственно черными и белыми. -->
+    <div></div>
+    <script>
+        function chessDesk() {
+            let table = document.createElement('table');
+            let array = ['', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', ''];
+            let number = ['', '1', '2', '3', '4', '5', '6', '7', '8', ''];
+            let reverseNumber = number.reverse();
+            let chessPiece = ['', 'Л', 'К', 'С', 'Ф', 'Кр', 'С', 'К', 'Л'];
+            let chessPawn = ['п'];
+            for (var i = 0; i < 10; ++i) {
+                var tr = document.createElement('tr');
+                table.append(tr);
+                for (var j = 0; j < 10; ++j) {
+                    var td = document.createElement('td');
+                    tr.append(td);
+                    td.innerHTML = (i + 1) + j;
+
+                    if (td.innerHTML % 2 == 0) {
+                        td.style.backgroundColor = "#8E3918";
+                    }
+
+                    if (i == 9 && 0 <= j <= 9) {
+                        td.innerHTML = array[j];
+                    } else if (i == 0 && 0 <= j <= 9) {
+                        td.innerHTML = array[j];
+                    } else if (i <= 8 && j == 0) {
+                        td.innerHTML = reverseNumber[i];
+                    } else if (i <= 8 && j == 9) {
+                        td.innerHTML = reverseNumber[i];
+                    } else if (i == 1 && 1 <= j && j < 9) {
+                        td.innerHTML = chessPiece[j];
+                    } else if (i == 2 && 1 <= j && j < 9) {
+                        td.innerHTML = chessPawn;
+                    } else if (i == 7 && 1 <= j && j < 9) {
+                        td.innerHTML = chessPawn;
+                        td.style.color = '#FAFAD2';
+                    } else if (i == 8 && 1 <= j && j < 9) {
+                        td.innerHTML = chessPiece[j];
+                        td.style.color = '#FAFAD2';
+                    } else {
+                        td.innerHTML = '';
+                    }
+                }
+            }
+            document.querySelector('div').append(table);
+        }
+
+        chessDesk();
+    </script>
+</body>
+
+</html>
